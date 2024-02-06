@@ -15,8 +15,25 @@
 
 <!-- Navbar -->
 <div class="w3-top">
-  <div class="w3-bar w3-blue w3-card w3-left-align w3-large">
-    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-blue" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+  <div id="contactInfo" class="w3-bar w3-indigo w3-card w3-left-align w3-large">
+    <div class="phones w3-center">
+      <i class="fa fa-phone w3-xlarge w3-padding-16 w3-text-white"></i>
+      <a href="tel:543514233716" class="number">4233716</a>
+      <a href="tel:543514228492" class="number w3-hide-small">4228492</a>
+      <a hidden href="tel:543514444102" class="number w3-hide-small">4444102</a>
+      <a hidden href="tel:543514623641" class="number w3-hide-small">4623641</a>
+    </div>
+    <div class="phones w3-center">
+      <i class="fa fa-whatsapp w3-xlarge w3-padding-16 w3-text-white"></i>
+      <a href="tel:543515321008" class="number">351 5321008</a>
+      <a href="tel:543518655601" class="number w3-hide-small">351 8655601</a>
+    </div>
+  </div>
+  <div class="w3-bar w3-indigo w3-card w3-left-align w3-large">
+    <a href="" class="w3-bar-item">
+      <img class="logo" src="logoT.png" alt="">
+    </a>
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-indigo" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white">Inicio</a>
     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Link 1</a>
     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Link 2</a>
@@ -38,12 +55,27 @@
   <div class="shadow" style="padding:256px 16px">
     <h1 class="w3-margin w3-jumbo">CLINICA LAZARTE</h1>
     <p class="w3-xlarge">Consultorios oftalmológicos</p>
-    <button class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Get Started</button>
   </div>
 </header>
 
-<div id="sticky" class="w3-center">
-    <button class="button sacarTurno w3-button w3-green w3-padding-large w3-xxlarge w3-margin-top">Sacar turno</button>
+<!-- Header -->
+<header hidden class="bgimg-1 w3-blue w3-center">
+  <div class="shadow" style="padding:256px 16px">
+    <h1 class="w3-margin w3-jumbo">CLINICA LAZARTE</h1>
+    <p class="w3-xlarge">Centro de microcirugía ocular y alta complejidad oftalmológica</p>
+  </div>
+</header>
+
+<!-- Header -->
+<header hidden class="bgimg-1 w3-blue w3-center">
+  <div class="shadow" style="padding:256px 16px">
+    <h1 class="w3-margin w3-jumbo">Dr. Armando Lazarte</h1>
+    <p class="w3-xlarge">Centro de microcirugía ocular y alta complejidad oftalmológica</p>
+  </div>
+</header>
+
+<div id="sticky">
+    <a id="sacarTurno" class="button w3-button w3-green w3-padding-large w3-margin-top" href="https://wa.me/543515321008">Sacar turno</a>
 </div>
 
 
@@ -64,6 +96,8 @@
     </div>
   </div>
 </div>
+
+<div class="bgimg-2"></div>
 
 <!-- Second Grid -->
 <div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
@@ -86,6 +120,8 @@
 <div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
     <h1 class="w3-margin w3-xlarge">Quote of the day: live life</h1>
 </div>
+
+<div class="bgimg-3"></div>
 
 <!-- Footer -->
 <footer class="w3-container w3-padding-64 w3-center w3-opacity">  
@@ -110,6 +146,16 @@ function myFunction() {
     x.className = x.className.replace(" w3-show", "");
   }
 }
+
+/*window.onscroll = function() {
+    var sacarTurnoButton = document.getElementById('sacarTurno');
+    var scrollY = window.scrollY || window.pageYOffset;
+
+    // Adjust left position based on scroll position
+    sacarTurnoButton.style.right = Math.max(0, 50 - scrollY) + '%';
+    console.log(Math.max(0, 100 - scrollY) + '%')
+};*/
+
 </script>
 
 </body>
