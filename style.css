@@ -4,9 +4,18 @@ body,h1,h2,h3,h4,h5,h6 {
 .w3-bar,h1,button {
     font-family: "Montserrat", sans-serif
 }
-.fa-anchor,.fa-coffee {
+.fa-laptop-medical,.fa-clinic-medical {
     font-size:200px
 }
+
+.fa-bars {
+    font-size:32px;
+}
+
+.fa-phone, .fa-whatsapp{
+    font-size:24px;
+}
+
 
 a {
     text-decoration:none;
@@ -14,6 +23,13 @@ a {
 
 .logo {
     width:80px;
+}
+
+#topBar {
+    display: flex;
+    flex-direction:row;
+    justify-content: left;
+    align-items: left;
 }
 
 #contactInfo {
@@ -34,8 +50,18 @@ a {
 
 .number {
     margin:10px;
+    font-size:18px;
 }
 
+.number:hover {
+    font-weight:bold;
+}
+
+.vertAlign {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 /* Create a Parallax Effect */
 .bgimg-1, .bgimg-2, .bgimg-3 {
@@ -83,11 +109,22 @@ min-height: 400px;
 #sacarTurno {
     font-size: 36px;
     font-family: "Montserrat", sans-serif;
+    border-radius: 5px;
+}
+
+#sacarTurnoSmall {
+    font-size: 24px;
+    font-family: "Montserrat", sans-serif;
+    border-radius: 5px;
 }
 
 .button {
     box-shadow: 0 0 6px #000;
     color: #fff;
+}
+
+.obraSocial {
+    width:40%
 }
 
 /* Turn off parallax scrolling for tablets and phones */
@@ -103,6 +140,34 @@ min-height: 400px;
     }
 
     #sacarTurno {
-        font-size: 20px
+        font-size: 20px;
+        border-radius: 5px;
+    }
+
+    #sacarTurnoSmall {
+        font-size: 16px;
+        border-radius: 5px;
+    }
+
+    .number {
+        margin:10px;
+        font-size:14px;
+    }
+    
+    .fa-bars {
+        font-size:24px;
+    }
+    
+    .fa-phone, .fa-whatsapp{
+        font-size:18px;
+    }
+    
+    .phones {
+        padding:5px;
+        margin-left: 0px;
+        margin-right: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
   }
