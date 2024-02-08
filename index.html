@@ -47,35 +47,19 @@
 
   <!-- Navbar on small screens -->
   <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-large">
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 4</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Institución</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Patologías</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Cirugías</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Contacto</a>
   </div>
 </div>
 
 <!-- Header -->
-<header class="bgimg-1 w3-blue w3-center w3-animate-opacity">
+<header id="header1" class="bgimg-1 w3-blue w3-center w3-animate-opacity">
   <div class="shadow" style="padding:256px 16px">
-    <h1 class="w3-margin w3-jumbo w3-animate-zoom">CLINICA LAZARTE</h1>
-    <p class="w3-xlarge w3-animate-zoom">Consultorios oftalmológicos</p>
+    <h1 id="mainTitle" class="w3-margin w3-animate-zoom">CLINICA LAZARTE</h1>
+    <p id="subTitle" class="w3-xlarge w3-animate-zoom">Brindando claridad visual con tecnología de vanguardia y cuidado experto.</p>
     <a id="sacarTurnoSmall" class="button w3-button w3-green w3-padding-large w3-margin-top w3-animate-bottom" href="https://wa.me/543515321008">Sacar turno</a>
-  </div>
-</header>
-
-<!-- Header -->
-<header hidden class="bgimg-1 w3-blue w3-center">
-  <div class="shadow" style="padding:256px 16px">
-    <h1 class="w3-margin w3-jumbo">CLINICA LAZARTE</h1>
-    <p class="w3-xlarge">Centro de microcirugía ocular y alta complejidad oftalmológica</p>
-  </div>
-</header>
-
-<!-- Header -->
-<header hidden class="bgimg-1 w3-blue w3-center">
-  <div class="shadow" style="padding:256px 16px">
-    <h1 class="w3-margin w3-jumbo">Dr. Armando Lazarte</h1>
-    <p class="w3-xlarge">Centro de microcirugía ocular y alta complejidad oftalmológica</p>
   </div>
 </header>
 
@@ -85,10 +69,10 @@
     <h1>Obras sociales</h1>
     <br>
     <br>
-    <div id="logoPami" class="w3-half">
+    <div id="logoPami" class="obraSocialContainer w3-half">
       <img src="logo-pami.png" alt="" class="obraSocial">
     </div>
-    <div id="logoApross" class="w3-half">
+    <div id="logoApross" class="obraSocialContainer w3-half">
       <img src="logo-apross.png" alt="" class="obraSocial">
     </div>
   </div>
@@ -99,7 +83,7 @@
   <div class="w3-content">
     <div class="w3-twothird">
       <h1>Lorem Ipsum</h1>
-      <h5 class="w3-padding-32">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h5>
+      <h5 class="w3-padding-32">En Clínica Lazarte, nos enorgullece ofrecer servicios pioneros en microcirugía ocular, destacándonos como un referente de excelencia médica y tecnológica en el ámbito oftalmológico. Nuestro compromiso radica en proporcionar atención médica de vanguardia, centrada en la seguridad, la precisión y el bienestar del paciente.</h5>
 
       <p class="w3-text-grey">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint
         occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
@@ -112,9 +96,6 @@
   </div>
 </div>
 
-<div id="sticky">
-    <a id="sacarTurno" class="button w3-button w3-green w3-padding-large w3-margin-top" href="https://wa.me/543515321008">Sacar turno</a>
-</div>
 
 <div class="bgimg-2"></div>
 
@@ -140,6 +121,12 @@
     <h1 class="w3-margin w3-xlarge">Quote of the day: live life</h1>
 </div>
 
+<div id="sticky">
+  <a id="sacarTurno" class="button w3-button w3-green w3-padding-large w3-margin-top w3-animate-bottom" href="https://wa.me/543515321008">Sacar turno</a>
+</div>
+
+<div id="displayer"></div>
+
 <div class="bgimg-3"></div>
 
 <!-- Footer -->
@@ -162,14 +149,83 @@ function myFunction() {
   }
 }
 
+var sacarTurnoButton = document.getElementById('sacarTurno');
+
+const elementToWatch = document.getElementById('displayer');
+
+var screenWidth = window.innerWidth;
+
 window.onscroll = function() {
-    var sacarTurnoButton = document.getElementById('sacarTurno');
     var scrollY = window.scrollY || window.pageYOffset;
 
+    let isOnPhone = screenWidth > 600? false : true
+
+    const viewportHeight = window.innerHeight;
+
+    // Get the position of the element relative to the viewport
+    const elementRect = elementToWatch.getBoundingClientRect();
+    const elementTop = elementRect.top;
+    const elementBottom = elementRect.bottom;
+
+    // Check if the element is in view
+    if (elementTop < viewportHeight && elementBottom > 0) {
+        // Element is currently in view
+        sacarTurnoButton.style.width = "100%"
+        // You can execute your action here
+    } else {
+        // Element is out of view
+        sacarTurnoButton.style.width = isOnPhone ? "50%" : "25%"
+        // You can execute another action here
+    }
+
     // Adjust left position based on scroll position
-    sacarTurnoButton.style.right = Math.max(0, 50 - scrollY) + '%';
-    console.log(scrollY)
+    //sacarTurnoButton.style.right = Math.max(0, 50 - scrollY) + '%';
+
+    if(scrollY>400){
+      sacarTurnoButton.style.display = "block"
+    }
+    else{
+      sacarTurnoButton.style.display = "none"
+    }
+
+    console.log(screenWidth)
 };
+
+let mainTitle = document.getElementById("mainTitle")
+let currentTitle = 1;
+
+mainTitle.addEventListener("click",function(){
+  currentTitle = currentTitle >=2? 1 : currentTitle+1
+
+
+  if(currentTitle == 1){
+    mainTitle.innerText = "CLINICA LAZARTE";
+  }
+  else if(currentTitle == 2){
+    mainTitle.innerText = "Dr. Armando Lazarte"
+  }
+  console.log(currentTitle)
+
+})
+
+let subTitle = document.getElementById("subTitle")
+let currentSubTitle = 1;
+
+subTitle.addEventListener("click",function(){
+  currentSubTitle = currentSubTitle >=3? 1 : currentSubTitle+1
+
+  if(currentSubTitle == 1){
+    subTitle.innerText = "Brindando claridad visual con tecnología de vanguardia y cuidado experto.";
+  }
+  else if(currentSubTitle == 2){
+    subTitle.innerText = "Consultorios oftalmológicos"
+  }
+  else if(currentSubTitle == 3){
+    subTitle.innerText = "Centro de microcirugía ocular y alta complejidad oftalmológica"
+  }
+
+})
+
 
 </script>
 
