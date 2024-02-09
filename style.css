@@ -190,4 +190,23 @@ min-height: 400px;
         justify-content: center;
         align-items: center;
     }
+
+    
+    .phonesFooter {
+        padding:5px;
+        margin-left: 15px;
+        margin-right: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .numberFooter {
+        margin:10px;
+        font-size:20px;
+    }
+
+    .fa-phoneFooter, .fa-whatsappFooter{
+        font-size:30px;
+    }
   }
