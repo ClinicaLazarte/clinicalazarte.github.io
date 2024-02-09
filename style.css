@@ -4,7 +4,7 @@ body,h1,h2,h3,h4,h5,h6 {
 .w3-bar,h1,button {
     font-family: "Montserrat", sans-serif
 }
-.fa-laptop-medical,.fa-clinic-medical {
+.fa-laptop-medical,.fa-clinic-medical,.fa-hand-holding-medical {
     font-size:200px
 }
 
@@ -12,7 +12,7 @@ body,h1,h2,h3,h4,h5,h6 {
     font-size:32px;
 }
 
-.fa-phone, .fa-whatsapp{
+.fa-phone, .fa-whatsapp, .fa-location-dot{
     font-size:24px;
 }
 
@@ -32,14 +32,14 @@ a {
     align-items: left;
 }
 
-#contactInfo {
+#contactInfo, #locationInfo {
     display: flex;
     flex-direction:row;
     justify-content: center;
     align-items: center;
 }
 
-.phones {
+.phones, .location {
     padding:5px;
     margin-left: 15px;
     margin-right: 15px;
@@ -48,12 +48,15 @@ a {
     align-items: center;
 }
 
-.number {
+.number, .address {
     margin:10px;
     font-size:18px;
 }
 
 .number:hover {
+    font-weight:bold;
+}
+.address:hover {
     font-weight:bold;
 }
 
@@ -69,29 +72,31 @@ a {
 }
 
 /* Create a Parallax Effect */
-.bgimg-1, .bgimg-2, .bgimg-3 {
+.bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4 {
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
-  
-/* First image (Logo. Full height) */
+
 .bgimg-1 {
 background-image: url('stock1.jpg');
 min-height: 100%;
 }
 
-/* Second image (Portfolio) */
 .bgimg-2 {
 background-image: url("stock3.jpg");
 min-height: 400px;
 }
 
-/* Third image (Contact) */
 .bgimg-3 {
 background-image: url("stock2.jpg");
 min-height: 400px;
+}
+
+.bgimg-4 {
+    background-image: url("stock4.jpg");
+    min-height: 400px;
 }
 
 .shadow{
@@ -141,10 +146,10 @@ min-height: 400px;
 
 /* Turn off parallax scrolling for tablets and phones */
 @media only screen and (max-width: 600px) {
-    .bgimg-1, .bgimg-2, .bgimg-3 {
+    /*.bgimg-1, .bgimg-2, .bgimg-3 {
       background-attachment: scroll;
       min-height: 400px;
-    }
+    }*/
 
     #mainTitle {
         font-size:52px;
