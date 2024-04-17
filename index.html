@@ -80,10 +80,10 @@
     <h1>Obras sociales</h1>
     <br>
     <br>
-    <div id="logoPami" class="obraSocialContainer w3-half w3-animate-left">
+    <div id="logoPami" class="obraSocialContainer w3-half startAppearLeft">
       <img src="logo-pami.png" alt="" class="obraSocial">
     </div>
-    <div id="logoApross" class="obraSocialContainer w3-half w3-animate-right">
+    <div id="logoApross" class="obraSocialContainer w3-half startAppearRight">
       <img src="logo-apross.png" alt="" class="obraSocial">
     </div>
   </div>
@@ -259,6 +259,9 @@ var sacarTurnoButton = document.getElementById('sacarTurno');
 
 const bottomElement = document.getElementById('displayer');
 
+const logoPami = document.getElementById('logoPami')
+const logoApross = document.getElementById('logoApross')
+
 const viewportHeight = window.innerHeight;
 
 
@@ -278,6 +281,15 @@ window.onscroll = function() {
         // Element is out of view
         sacarTurnoButton.style.width = isOnPhone ? "50%" : "30%"
         // You can execute another action here
+    }
+
+    if(isOnView(logoPami)){
+      logoPami.classList.add('playAppearLeft')
+      logoPami.classList.remove('startAppearLeft')
+    }
+    if(isOnView(logoApross)){
+      logoApross.classList.add('playAppearRight')
+      logoApross.classList.remove('startAppearRight')
     }
 
     

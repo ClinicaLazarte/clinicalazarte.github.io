@@ -217,3 +217,53 @@ min-height: 400px;
         display:none;
     }
   }
+
+
+  @keyframes appearRight {
+    from{
+        right:-300px;
+        opacity:0;
+    }
+    to{
+        right:0px;
+        opacity:1;
+    }
+  }
+  
+  @keyframes appearLeft {
+    from{
+        right:300px;
+        opacity:0;
+    }
+    to{
+        right:0px;
+        opacity:1;
+    }
+  }
+
+  .startAppearRight{
+    position:relative;
+    right:300px;
+    opacity:0;
+  }
+  
+  .startAppearLeft{
+    position:relative;
+    right:-300px;
+    opacity:0;
+  }
+
+  .playAppearRight{
+    position: relative;
+    animation: 0.4s appearRight;
+    /*animation-timeline: scroll();
+    animation-range: 0vh 50vh;*/
+  }
+
+  
+  .playAppearLeft{
+    position: relative;
+    animation: 0.4s appearLeft;
+    /*animation-timeline: scroll();
+    animation-range: 0vh 50vh;*/
+  }
