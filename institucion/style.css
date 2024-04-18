@@ -68,7 +68,7 @@ a {
 
 
 #mainTitle {
-    font-size:64px;
+    font-size:48px;
 }
 
 .bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4 {
@@ -79,23 +79,23 @@ a {
 }
 
 .bgimg-1 {
-background-image: url('stock1.jpg');
+background-image: url('../stock1.jpg');
 min-height: 100%;
 }
 
 .bgimg-2 {
-background-image: url("stock3.jpg");
-min-height: 400px;
+background-image: url("../stock3.jpg");
+min-height: 100%;
 }
 
 .bgimg-3 {
-background-image: url("stock2.jpg");
-min-height: 400px;
+background-image: url("../stock2.jpg");
+min-height: 100%;
 }
 
 .bgimg-4 {
-    background-image: url("stock4.jpg");
-    min-height: 400px;
+    background-image: url("../stock4.jpg");
+    min-height: 100%;
 }
 
 .shadow{
